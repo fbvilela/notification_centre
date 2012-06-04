@@ -4,7 +4,7 @@ class ReceivedUpdatesController < ApplicationController
 
   def index
     @application = Application.find(params[:application_id]) rescue nil
-    @application = Application.find_by_name(params[:app_name]) if @applicaiton.blank?
+    @application = Application.find_by_name(params[:app_name]) if @application.blank?
     @received_updates = @application.received_updates
 
     respond_to do |format|
