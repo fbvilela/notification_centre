@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  agency_id: MyString
+  object_id: MyString
+  time: 2012-06-04 22:50:35
+
+two:
+  name: MyString
+  agency_id: MyString
+  object_id: MyString
+  time: 2012-06-04 22:50:35
