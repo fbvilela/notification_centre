@@ -14,6 +14,8 @@ class ApplicationsController < ApplicationController
     @application = Application.find_by_name params.delete(:app_name)
     params.delete(:controller)
     params.delete(:action)
+    params[:obj_id] = params[:object_id]
+    params.delete(:object_id)
     @application.received_updates.create(params)
     render :nothing => true
   end

@@ -1,7 +1,7 @@
 <%= simple_form_for @received_update, :url => application_received_updates_path(params[:application_id]), :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
   <%= f.input :agency_id %>
-  <%= f.input :object_id %>
+  <%= f.input :obj_id %>
   <%= f.input :time , :as => :datetime %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

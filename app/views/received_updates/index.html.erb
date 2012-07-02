@@ -7,7 +7,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:agency_id) %></th>
-      <th><%= model_class.human_attribute_name(:object_id) %></th>
+      <th><%= model_class.human_attribute_name(:obj_id) %></th>
       <th><%= model_class.human_attribute_name(:time) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= link_to received_update.name, application_received_update_path(received_update.application, received_update) %></td>
         <td><%= received_update.agency_id %></td>
-        <td><%= received_update.object_id %></td>
+        <td><%= received_update.obj_id %></td>
         <td><%= received_update.time %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
