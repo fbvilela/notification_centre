@@ -7,7 +7,7 @@ class ReceivedUpdatesController < ApplicationController
     name = params[:app_name] || params[:application_id]
     @application = Application.find_by_name(name) if @application.blank?
     since = Time.parse(params[:since]).utc rescue nil
-    condition = params[:agency_id].blank? ? "1=1" : "agency_id=#{params[:agency_id]}"
+    condition = params[:agency_id].blank? ? "1=1" : "agency_id='#{params[:agency_id]}'"
     @received_updates = @application.received_updates.where(condition).since( since )
 
     respond_to do |format|
