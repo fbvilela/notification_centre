@@ -4,10 +4,12 @@ class ReceivedUpdatesController < ApplicationController
 
   def index
     @application = Application.find(params[:application_id]) rescue nil
-    @application = Application.find_by_name(params[:application_id]) if @application.blank?
+    name = params[:app_name] || params[:application_id]
+    @application = Application.find_by_name(name) if @application.blank?
     since = Time.parse(params[:since]).utc rescue nil
-    @received_updates = @application.received_updates.since( since )
-    
+    condition = params[:agency_id].blank? ? "1=1" : "agency_id=#{params[:agency_id]}"
+    @received_updates = @application.received_updates.where(condition).since( since )
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @received_updates }
