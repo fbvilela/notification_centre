@@ -18,8 +18,19 @@ test:
   pool: 5
   timeout: 5000
 
-production:
+production:	
   adapter: sqlite3
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
+
+staging:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: notification_staging
+  pool: 5 
+  username: mobile 
+  password: hmas754berries 
+  host: mm1rul2znsu7gyi.cdbsw3fkf4fy.us-west-1.rds.amazonaws.com 
+  port: 3306

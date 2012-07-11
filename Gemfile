@@ -20,7 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'pg'
+gem 'mysql2'
 gem 'heroku'
 gem 'jquery-rails'
 gem 'simple_form'
@@ -37,7 +37,7 @@ gem 'kaminari'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
