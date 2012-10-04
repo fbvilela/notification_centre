@@ -4,9 +4,6 @@ set :repository,  "https://github.com/fbvilela/notification_centre.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
-
 task :amazon do   
   set :rails_env, "production"
   ssh_options[:user] = "ec2-user"
