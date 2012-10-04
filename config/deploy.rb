@@ -4,7 +4,10 @@ set :repository,  "https://github.com/fbvilela/notification_centre.git"
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-task :amazon do 
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
+
+task :amazon do   
   set :rails_env, "production"
   ssh_options[:user] = "ec2-user"
   ssh_options[:keys] = [File.join("~/.ssh/iproperty-ec2.pem")]
