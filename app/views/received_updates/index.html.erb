@@ -10,6 +10,7 @@
 			<td><%= f.select :type, @update_types, :required => false, :include_blank => "Any" %></td>
   		<td><%= f.input :agency_id, :label => false,  :placeholder => "Agency id" , :required => false %></td>
     	<td><%= f.input :object_id , :label => false, :placeholder => "Object id", :required => false%></td>
+			<td> <%= pluralize( @received_updates.count, "Update") %> </td>
     	<td><%= f.button :submit, "Filter", :class => 'btn-primary' %></td>
 		</tr>
   </tbody>
