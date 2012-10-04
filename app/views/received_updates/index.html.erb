@@ -2,6 +2,19 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+
+<%= simple_form_for :search, :url => application_received_updates_path(params[:application_id]),:method => 'GET', :html => { :class => 'form-inline' } do |f| %>
+<table class="table table-striped">
+  <tbody>
+		<tr>
+			<td><%= f.select :type, @update_types, :required => false, :include_blank => "Any" %></td>
+  		<td><%= f.input :agency_id, :label => false,  :placeholder => "Agency id" , :required => false %></td>
+    	<td><%= f.input :object_id , :label => false, :placeholder => "Object id", :required => false%></td>
+    	<td><%= f.button :submit, "Filter", :class => 'btn-primary' %></td>
+		</tr>
+  </tbody>
+</table>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>

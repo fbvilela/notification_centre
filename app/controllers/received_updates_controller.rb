@@ -7,9 +7,21 @@ class ReceivedUpdatesController < ApplicationController
     name = params[:app_name] || params[:application_id]
     @application = Application.find_by_name(name) if @application.blank?
     since = Time.parse(params[:since]).utc rescue nil
-    condition = params[:agency_id].blank? ? "1=1" : "agency_id='#{params[:agency_id]}'"
-    @received_updates = @application.received_updates.where(condition).since( since )
+    agency_id = params[:agency_id] || ( params[:search][:agency_id] unless params[:search].blank? )
 
+    condition = agency_id.blank? ? "1=1" : "agency_id='#{agency_id}'"
+    
+    unless params[:search].blank? 
+      condition += " and name='#{params[:search][:type]}'" unless params[:search][:type].blank? || params[:search][:type] == "Any"
+      condition += " and obj_id='#{params[:search][:object_id]}'" unless params[:search][:object_id].blank? 
+    end
+    
+    @received_updates = @application.received_updates.where(condition).since( since ).order("created_at desc")
+    
+    @update_types = ["agency.update", "agent.create", "agent.update", "attendances.create", "attendances.delete",
+       "contact.create", "contact.delete", "contact.update", "floorplans.update", "inspections.create", "inspections.update",
+        "listing.create", "listing.update", "photos.update", "questions.update", "subscriptions.update", "virtual_realities.update"].collect{ |x| [x,x] }
+        
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @received_updates }
