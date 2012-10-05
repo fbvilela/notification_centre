@@ -23,7 +23,7 @@
       <th><%= model_class.human_attribute_name(:agency_id) %></th>
       <th><%= model_class.human_attribute_name(:obj_id) %></th>
       <th><%= model_class.human_attribute_name(:time) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <!--th><%=t '.actions', :default => t("helpers.actions") %></th-->
     </tr>
   </thead>
   <tbody>
@@ -33,20 +33,20 @@
         <td><%= received_update.agency_id %></td>
         <td><%= received_update.obj_id %></td>
         <td><%= received_update.time %></td>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        <!--td>
+          <% link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_application_received_update_path(received_update.application, received_update), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <% link_to t('.destroy', :default => t("helpers.links.destroy")),
                       application_received_update_path( received_update.application, received_update),
                       :method => :delete,
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
                       :class => 'btn btn-mini btn-danger' %>
-        </td>
+        </td-->
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<% link_to t('.new', :default => t("helpers.links.new")),
             new_application_received_update_path(@application),
             :class => 'btn btn-primary' %>
