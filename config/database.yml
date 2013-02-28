@@ -24,7 +24,7 @@ production:
   reconnect: false
   database: notification_production
   pool: 5 
-  username: mobile 
-  password: hmas754berries 
-  host: mm1rul2znsu7gyi.cdbsw3fkf4fy.us-west-1.rds.amazonaws.com 
+  username: mobileuser 
+  password: "[zoidberg729]" 
+  host: mobilewebsitesdb.czb4daseyrbp.ap-southeast-2.rds.amazonaws.com
   port: 3306
