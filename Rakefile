@@ -9,5 +9,5 @@ NotificationCentre::Application.load_tasks
 desc 'Generate a new ZIP package for Elastic Beanstalk based upon the current git SHA1'
 task :package do
   sha = `git rev-parse --verify HEAD`.chomp
-  sh "git archive --format=zip HEAD > packages/sinatra-#{sha[0..8]}.zip"
+  sh "git archive --format=zip HEAD > packages/notification-#{sha[0..8]}.zip"
 end
