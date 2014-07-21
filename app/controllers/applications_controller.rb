@@ -1,6 +1,11 @@
 class ApplicationsController < ApplicationController
   # GET /applications
   # GET /applications.json
+  # 
+  # 
+  
+  skip_before_filter  :verify_authenticity_token, only: [:webhook]
+  
   def index
     @applications = Application.all
 
@@ -16,7 +21,9 @@ class ApplicationsController < ApplicationController
     params.delete(:action)
     params[:obj_id] = params[:object_id]
     params.delete(:object_id)
-    @application.received_updates.create(params)
+    x = @application.received_updates.create(params)
+    puts x.inspect
+    puts "valid? : #{x.valid?}"
     render :nothing => true
   end
 
