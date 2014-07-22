@@ -18,13 +18,14 @@ test:
   pool: 5
   timeout: 5000
 
-#production:
-#  adapter: mysql2
-#  encoding: utf8
-#  reconnect: false
-#  database: notification_production
-#  pool: 5 
-#  username: mobileuser 
-#  password: "[zoidberg729]" 
-#  host: mobilewebsitesdb.czb4daseyrbp.ap-southeast-2.rds.amazonaws.com
-#  port: 3306
+#new beanstalk settings ( loading from ENV variables )
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: ebdb
+  pool: 5
+  username: notifications
+  password: "[calculon681]"
+  host: aa1llf1i8tsjf8n.czb4daseyrbp.ap-southeast-2.rds.amazonaws.com
+  port: 3306

@@ -31,7 +31,7 @@ gem 'less-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'kaminari'
-gem "activerecord_url_connections"
+#gem "activerecord_url_connections"
 #gem 'whenever'
 
 # To use ActiveModel has_secure_password
