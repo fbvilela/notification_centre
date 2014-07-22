@@ -32,6 +32,7 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'kaminari'
 gem 'minitest'
+gem 'rack', '1.4.5'
 #gem "activerecord_url_connections"
 #gem 'whenever'
 
